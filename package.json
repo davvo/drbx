@@ -1,7 +1,7 @@
 {
   "name": "@davvo/drbx",
   "version": "2.0.1",
-  "description": "dropbox upload",
+  "description": "Dropbox upload and download streams",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
@@ -10,5 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "request": "^2.69.0"
-  }
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/davvo/drbx.git"
+  },
+  "keywords": "dropbox streams"
 }
