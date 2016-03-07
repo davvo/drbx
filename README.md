@@ -15,12 +15,12 @@ const drbx = require('@davvo/drbx')({
 })
 
 // Download
-let remoteReadStream = drbx.file('giraffe.jpg').createReadStream()
+let remoteReadStream = drbx.file('/giraffe.jpg').createReadStream()
 let localWriteStream = fs.createWriteStream('/photos/zoo/giraffe.jpg')
 remoteReadStream.pipe(localWriteStream)
 
 // Upload
 let localReadStream = fs.createReadStream('/photos/zoo/zebra.jpg')
-let remoteWriteStream = drbx.file('zebra.jpg').createWriteStream()
+let remoteWriteStream = drbx.file('/zebra.jpg').createWriteStream()
 localReadStream.pipe(remoteWriteStream)
 ```
