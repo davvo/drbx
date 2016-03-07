@@ -1,0 +1,14 @@
+{
+  "name": "@davvo/drbx",
+  "version": "1.0.0",
+  "description": "dropbox upload",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "davvo",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.69.0"
+  }
+}
