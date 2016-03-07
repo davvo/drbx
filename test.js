@@ -8,10 +8,8 @@ const drbx = require('.')({
 
 let file = drbx.file('/test.js')
 
-/*
 fs.createReadStream('test.js').pipe(file.createWriteStream())
 	.on('end', () => console.log("Done"))
 	.on('error', err => console.error("Error:", err))
-*/
 
-file.createReadStream().pipe(fs.createWriteStream('myfile.js'))
+//file.createReadStream().pipe(fs.createWriteStream('myfile.js'))
