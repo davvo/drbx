@@ -18,14 +18,19 @@ function createReadStream(path, token) {
 
 function createWriteStream(path, token) {
 	return function (options) {
-		options = Object.assign({
-			contentType: 'application/octet-stream'
-		}, options)
+		options = options || {}
+
+		let apiArgs = {
+			path: path,
+			mode: options.mode || 'add',
+			mute: options.mute || false,
+			autorename: options.autorename || false
+		}
 
 		let headers = {
 			'Authorization': `Bearer ${token}`,
-			'Dropbox-API-Arg': `{"path": "${path}"}`,
-			'Content-Type': options.contentType
+			'Dropbox-API-Arg': JSON.stringify(apiArgs),
+			'Content-Type': options.contentType || 'application/octet-stream',
 		}
 
 		return request({
